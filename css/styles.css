@@ -25,7 +25,7 @@
   background color, we only have to change it here.
 */
 :root {
-  --background-color:  linear-gradient(to bottom, #9cffde 0%,#38b38a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  --background-color:  linear-gradient(to bottom, #9cffde 0%,#38b38a 61%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   --text-color: #000000;       /* Standard text color */
   --primary-accent: #82CFA8;   /* Primary accent for hover effects, etc. */
   --secondary-accent: #288063; /* Secondary accent for other elements */
@@ -53,7 +53,7 @@
   sticks to the bottom of the page, even on short content pages.
 */
 body {
-  background: linear-gradient(to bottom, #9cffde 0%,#38b38a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, #9cffde 0%,#38b38a 61%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color: var(--text-color);
   font-family: var(--body-font);
   line-height: 1.6; /* Improves readability */
