@@ -1,0 +1,173 @@
+/*
+  css/collections.css
+  Page-Specific Stylesheet for the Main Gallery Page (collections/index.html)
+
+  This file contains styles unique to the main gallery page, which displays
+  all the different collections of artwork.
+*/
+
+/* --- Main Container --- */
+/*
+  Sets up the main content area.
+  'max-width' and 'margin: 0 auto' center the content.
+  'padding' provides whitespace.
+*/
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* --- Gallery Header --- */
+/*
+  Styles for the introductory text at the top of the gallery.
+  'text-align: center' centers the text.
+  'margin-bottom' creates space before the grid of collections.
+*/
+.gallery-title, .gallery-intro {
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2.8rem;
+  color: var(--secondary-accent);
+  margin-bottom: 1rem;
+}
+
+.gallery-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Collections Grid --- */
+/*
+  The grid that holds all the collection cards.
+  'display: grid' initializes the grid layout.
+  'grid-template-columns' creates a responsive grid. It will try to fit as many
+  350px columns as it can, and then distribute the remaining space evenly among them.
+  'gap' creates space between the grid items.
+*/
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Collection Card --- */
+/*
+  The style for each individual collection link/card.
+  'display: block' allows the whole card to be a clickable link.
+  'background-color' sets a background for the text area.
+  'border-radius' rounds the corners of the card.
+  'overflow: hidden' ensures the image corners are also rounded.
+  'box-shadow' adds a subtle shadow for a "lifting" effect.
+  'transition' creates a smooth animation for hover effects.
+*/
+.collection-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Make the whole card a block-level element */
+}
+
+/*
+  The anchor tag itself needs to be a block to contain the card content.
+*/
+.collection-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/*
+  Hover effect for the card. It will scale up slightly and the shadow will become more prominent.
+*/
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*
+  The thumbnail image for the collection.
+  'width: 100%' makes the image fill the width of the card.
+  'height: 250px' gives all thumbnails a consistent height.
+  'object-fit: cover' ensures the image covers the area without distortion.
+*/
+.collection-thumbnail {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+/*
+  The container for the text content below the image.
+  'padding' adds space around the text.
+*/
+.collection-info {
+  padding: 1.5rem;
+}
+
+/*
+  The title of the collection.
+  'font-family' uses the heading font.
+  'font-size' sets the text size.
+  'margin-bottom' adds space between the title and the description.
+*/
+.collection-info .collection-title {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0; /* Reset default h2 margin */
+  color: var(--text-color);
+}
+
+/*
+  The description of the collection.
+  'font-size' sets the text size.
+  'color' makes the text slightly lighter for a softer look.
+*/
+.collection-info .collection-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0; /* Reset default p margin */
+}
+
+
+/* --- Mobile Main Gallery (Horizontal Scroll) --- */
+/*
+  On mobile, the prompt specifies a horizontal scrolling behavior.
+  The implementation below is a simplified version. A more complex
+  JavaScript solution might be needed for the "one series at a time"
+  snap effect, but this provides the basic horizontal scroll.
+*/
+@media (max-width: 768px) {
+  /*
+    Change the grid to a flex container to enable horizontal scrolling.
+  */
+  .collections-grid {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to items */
+    padding-bottom: 1rem; /* Add space for the scrollbar */
+    /* Hide scrollbar for a cleaner look, but still allow scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .collections-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  /*
+    Each card should now take up most of the screen width to be scrolled
+    one at a time.
+  */
+  .collection-card {
+    flex: 0 0 85%; /* Don't grow, don't shrink, and be 85% of the container width */
+    scroll-snap-align: start; /* Snap the start of the item to the start of the container */
+  }
+}

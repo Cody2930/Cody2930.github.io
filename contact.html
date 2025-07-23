@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Macha Makings | Contact</title>
+    <meta name="description" content="Contact Kevin Macha for commissions, inquiries, or other messages through the contact form.">
+    <meta name="keywords" content="contact artist, Kevin Macha contact, art commissions">
+    <meta name="author" content="Kevin Macha">
+
+    <!-- Open Graph & Twitter Card Meta Tags -->
+    <meta property="og:title" content="Macha Makings | Contact">
+    <meta property="og:description" content="Contact Kevin Macha for commissions, inquiries, or other messages.">
+    <meta property="og:image" content="images/Macha_Proj3_Stabilio.jpg">
+    <meta property="og:url" content="https://machamakings.me/contact.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Macha Makings | Contact">
+    <meta name="twitter:description" content="Contact Kevin Macha for commissions, inquiries, or other messages.">
+    <meta name="twitter:image" content="images/Macha_Proj3_Stabilio.jpg">
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+
+    <!-- Stylesheet Links -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <!-- JavaScript Link -->
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="site-title">
+                <a href="index.html">Macha Makings</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="cv.html">CV/Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="collections/index.html">Gallery</a></li>
+            </ul>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+        <ul class="mobile-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bio.html">Bio</a></li>
+            <li><a href="cv.html">CV/Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="collections/index.html">Gallery</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <!-- Main container for the contact page content -->
+        <section class="contact-container">
+            <div class="contact-header">
+                <h1>Contact Me</h1>
+                <p>Have a question, commission request, or just want to say hello? Fill out the form below.</p>
+                <p>For submissions, please email: <a href="mailto:kmacha@islander.tamucc.edu">kmacha@islander.tamucc.edu</a></p>
+            </div>
+
+            <!-- The contact form -->
+            <!-- A service like Netlify or Formspree would be needed to make this functional -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <!-- Honeypot Field for Spam Prevention -->
+                <!-- This field is hidden from users. If it's filled out, the submission is likely from a bot. -->
+                <div class="honeypot-field" aria-hidden="true">
+                    <label for="honeypot">Do not fill this out</label>
+                    <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- Simple Captcha for Spam Prevention -->
+                <div class="form-group captcha">
+                    <label for="captcha">What is 2 + 2?</label>
+                    <input type="text" id="captcha" name="captcha" required>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="btn">submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/macha_makings/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+        <p>&copy; 2024 Kevin Macha. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

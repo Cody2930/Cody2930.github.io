@@ -1,0 +1,107 @@
+/*
+  css/404.css
+  Page-Specific Stylesheet for the 404 Error Page
+
+  This file contains styles for the minimalist 404 "Page Not Found" page.
+*/
+
+/* --- Main Container --- */
+/*
+  This container will hold all the 404 content.
+  'display: flex' and associated properties are used to perfectly center
+  the content both vertically and horizontally on the page.
+  'flex-grow: 1' is crucial for the vertical centering, making the <main>
+  element (which contains this) fill the available space.
+*/
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical alignment */
+  align-items: center;   /* Horizontal alignment */
+  text-align: center;
+  padding: 2rem;
+  flex-grow: 1; /* Allows the container to fill the main content area */
+}
+
+/*
+  Styles for the "404" status code text.
+  'font-size' makes it very large and prominent.
+  'font-weight' makes it bold.
+  'color' uses the primary accent color.
+  'margin' removes the default heading margin.
+*/
+.status-code {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+  margin: 0;
+}
+
+/*
+  Styles for the "Page Not Found" message.
+  'font-size' makes it large, but smaller than the status code.
+  'margin-top' is set to 0 to bring it closer to the status code.
+  'margin-bottom' adds space below it.
+*/
+.message {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/*
+  Styles for the friendly, helpful message below the main headings.
+  'font-size' makes it easily readable.
+  'max-width' prevents it from becoming too wide on large screens.
+  'margin-bottom' adds space before the link button.
+*/
+.friendly-message {
+  font-size: 1.2rem;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+/*
+  Styles for the "Go to Homepage" link, making it look like a button.
+  'display: inline-block' allows padding and margins.
+  'padding' creates the button shape.
+  'background-color' and 'color' style the button.
+  'border-radius' rounds the corners.
+  'text-decoration: none' removes the default underline.
+  'transition' creates a smooth hover effect.
+*/
+.home-link-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--secondary-accent);
+  color: white;
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/*
+  The hover state for the button.
+  'background-color' is darkened slightly.
+*/
+.home-link-btn:hover {
+  background-color: #5a9375;
+  color: white; /* Ensure text color remains white */
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+  /*
+    Adjust font sizes for smaller screens to prevent text from being too large.
+  */
+
+  .status-code {
+    font-size: 6rem;
+  }
+
+  .message {
+    font-size: 2rem;
+  }
+}

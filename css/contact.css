@@ -1,0 +1,152 @@
+/*
+  css/contact.css
+  Page-Specific Stylesheet for the Contact Page (contact.html)
+
+  This file contains styles unique to the contact page, primarily for
+  styling the contact form and its elements.
+*/
+
+/* --- Main Container --- */
+/*
+  Sets up the main content area for the page.
+  'max-width' keeps the form from becoming too wide on large screens.
+  'margin: 0 auto' centers the container.
+  'padding' provides whitespace.
+*/
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* --- Contact Header --- */
+/*
+  Styles the introductory text above the form.
+  'text-align: center' centers the text.
+  'margin-bottom' creates space between the header and the form.
+*/
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-size: 2.8rem;
+  color: var(--secondary-accent);
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --- Contact Form --- */
+/*
+  General styles for the form element.
+*/
+.contact-form {
+  width: 100%;
+}
+
+/*
+  Container for each label-input pair.
+  'margin-bottom' separates the form fields vertically.
+*/
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/*
+  Styles for the form labels.
+  'display: block' places the label on its own line above the input.
+  'margin-bottom' adds a small space between the label and its input field.
+  'font-family' uses the heading font for a consistent look.
+*/
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+  font-size: 1.1rem;
+}
+
+/*
+  Styles for text inputs, email inputs, and textareas.
+  'width: 100%' makes the fields take up the full width of their container.
+  'padding' adds space inside the fields, making them easier to read and use.
+  'border' defines the field's border.
+  'border-radius' gives the fields slightly rounded corners.
+  'font-size' and 'font-family' ensure the text inside the input matches the site's body font.
+  'background-color' is set to a slightly off-white for a softer look.
+*/
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--secondary-accent);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: var(--body-font);
+  background-color: #f8f8f8;
+}
+
+/*
+  The :focus pseudo-class applies when a user clicks into a form field.
+  'outline: none' removes the default browser outline.
+  'border-color' changes the border color to provide a clear visual cue.
+  'box-shadow' adds a subtle glow effect for better user feedback.
+*/
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--text-color);
+  box-shadow: 0 0 5px rgba(106, 168, 137, 0.5);
+}
+
+/*
+  Ensures the textarea is not resizable horizontally, which can break the layout.
+*/
+.form-group textarea {
+  resize: vertical;
+}
+
+/* --- Spam Prevention Fields --- */
+/*
+  The honeypot field is a common technique to catch spam bots.
+  This rule hides the field from visual users and screen readers.
+*/
+.honeypot-field {
+  position: absolute;
+  left: -5000px;
+  visibility: hidden;
+}
+
+/*
+  Styles for the simple captcha question.
+*/
+.captcha input {
+  max-width: 100px; /* Makes the input field smaller */
+}
+
+/* --- Submit Button --- */
+/*
+  Overrides the general .btn style if needed, or adds to it.
+  'width: 100%' makes the button span the full width of the form.
+  'cursor: pointer' changes the mouse cursor to a pointer on hover.
+  'text-transform: uppercase' makes the button text all caps.
+*/
+.contact-form .btn {
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+/*
+  Hover effect for the submit button.
+*/
+.contact-form .btn:hover {
+  background-color: #5a9375;
+}

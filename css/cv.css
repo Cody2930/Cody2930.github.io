@@ -1,0 +1,165 @@
+/*
+  css/cv.css
+  Page-Specific Stylesheet for the CV/Resume Page (cv.html)
+
+  This file contains styles unique to the CV/Resume page, focusing on
+  the layout of the download section and the structured resume content.
+*/
+
+/* --- Main Container --- */
+/*
+  Sets up the main content area for the page.
+  'max-width' ensures readability on wide screens.
+  'margin: 0 auto' centers the container.
+  'padding' provides whitespace around the content.
+*/
+.cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/*
+  Styles the main title of the page.
+  'text-align: center' centers the heading.
+  'margin-bottom' creates space below the title.
+  'font-size' and 'color' make the title prominent.
+*/
+.cv-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  color: var(--secondary-accent);
+}
+
+/* --- CV Download Section --- */
+/*
+  Styles the section containing the "Download CV" button.
+  'text-align: center' centers the content.
+  'margin-bottom' adds space between this section and the resume below.
+  'padding' adds internal spacing.
+  'background-color' makes the section stand out.
+  'border-radius' gives it rounded corners.
+*/
+.cv-download {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--primary-accent);
+  border-radius: 8px;
+}
+
+.cv-download h2 {
+  margin-bottom: 1rem;
+}
+
+/* --- General Button Style --- */
+/*
+  Creates a reusable button style.
+  'display: inline-block' allows padding and margins.
+  'padding' creates the button size.
+  'background-color' and 'color' define the button's appearance.
+  'font-family' and 'font-size' style the text.
+  'border-radius' rounds the corners.
+  'transition' creates a smooth hover effect.
+  'text-decoration: none' removes the default link underline.
+*/
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background-color: var(--secondary-accent);
+  color: white;
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  margin-top: 1rem; /* Space above the button */
+}
+
+/*
+  Defines the hover state for the button.
+  'background-color' darkens the button slightly.
+  'transform: translateY(-2px)' gives a subtle "lift" effect.
+*/
+.btn:hover {
+  background-color: #5a9375;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+/* --- Resume Section --- */
+/*
+  The main container for the inline resume content.
+*/
+.resume-section {
+  margin-top: 2rem;
+}
+
+/*
+  Styles for each category within the resume (e.g., Education, Experience).
+  'margin-bottom' separates the categories.
+*/
+.resume-category {
+  margin-bottom: 2.5rem;
+}
+
+/*
+  Styles for the headings of each category (h3).
+  'font-size' sets the text size.
+  'padding-bottom' and 'border-bottom' create a decorative underline effect.
+  'margin-bottom' adds space between the heading and the items below it.
+*/
+.resume-category h3 {
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-accent);
+  margin-bottom: 1.5rem;
+}
+
+/*
+  Styles for each individual item within a category (e.g., a specific job).
+  'margin-bottom' separates items.
+*/
+.resume-item {
+  margin-bottom: 1.5rem;
+}
+
+/*
+  Styles for the title of each resume item (h4).
+  'font-size' and 'margin-bottom' are adjusted for this level of heading.
+*/
+.resume-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700; /* Bolder text */
+}
+
+/*
+  Styles for the paragraph text within a resume item (e.g., dates, location).
+  'font-style: italic' sets the text to italics for secondary information.
+  'margin-bottom' adds space before the bullet points, if any.
+*/
+.resume-item p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/*
+  Styles for unordered lists (bullet points).
+  'list-style-position: inside' places the bullet inside the text block.
+  'padding-left' adds indentation for the list.
+*/
+.resume-item ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+/*
+  Styles for individual list items.
+  'margin-bottom' adds a small amount of space between bullet points.
+*/
+.resume-item li {
+  margin-bottom: 0.25rem;
+}

@@ -1,0 +1,153 @@
+/*
+  css/sample-work.css
+  Page-Specific Stylesheet for an Individual Artwork Page
+
+  This file styles the dedicated page for a single piece of art,
+  including its two-column layout.
+*/
+
+/* --- Main Container --- */
+.artwork-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* --- Breadcrumb/Back Button --- */
+/*
+  Styles the "Back to Collection" link to provide clear navigation.
+*/
+.breadcrumb {
+  margin-bottom: 2rem;
+}
+
+.back-to-series-btn {
+  display: inline-block;
+  color: var(--secondary-accent);
+  font-family: var(--heading-font);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-to-series-btn:hover {
+  color: var(--text-color);
+}
+
+/* --- Artwork Layout --- */
+/*
+  The main two-column layout for the image and details.
+  'display: flex' creates the flexbox container.
+  'align-items: flex-start' aligns items to the top.
+  'gap' creates space between the two columns.
+*/
+.artwork-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* --- Left Column: Image --- */
+/*
+  The container for the main artwork image.
+  'flex: 3' makes this column larger.
+*/
+.artwork-image-container {
+  flex: 3;
+}
+
+/*
+  The main image itself.
+  'width: 100%' makes it responsive.
+  'height: auto' maintains the aspect ratio.
+  'border-radius' and 'box-shadow' add visual polish.
+*/
+.main-artwork-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Right Column: Details --- */
+/*
+  The container for the artwork's details (title, medium, etc.).
+  'flex: 2' makes this column smaller than the image column.
+*/
+.artwork-details-container {
+  flex: 2;
+  position: sticky; /* Makes the details stick in place on scroll */
+  top: 2rem; /* The distance from the top it should stick */
+}
+
+/*
+  The title of the artwork.
+*/
+.artwork-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/*
+  The list containing metadata (medium, dimensions, year).
+  'list-style: none' removes the default bullet points.
+  'padding: 0' removes default list padding.
+  'margin-bottom' adds space between the list and the description.
+*/
+.artwork-meta {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--primary-accent);
+  border-bottom: 1px solid var(--primary-accent);
+}
+
+/*
+  Each item in the metadata list.
+  'padding' adds vertical spacing.
+  'border-bottom' creates a separator line (except for the last item).
+*/
+.artwork-meta li {
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.artwork-meta li:last-child {
+  border-bottom: none; /* Removes the line from the last item */
+}
+
+/*
+  Makes the label part of the metadata bold.
+*/
+.artwork-meta strong {
+  font-weight: 700;
+}
+
+/*
+  The main description paragraph(s) for the artwork.
+  'line-height' improves readability.
+*/
+.artwork-description p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* --- Responsive Styles for Artwork Page --- */
+@media (max-width: 768px) {
+  /*
+    On smaller screens, switch to a single-column layout.
+  */
+
+  .artwork-layout {
+    flex-direction: column; /* Stack the image and details vertically */
+  }
+
+  .artwork-details-container {
+    position: static; /* Remove the sticky positioning on mobile */
+    top: auto;
+  }
+
+  .artwork-title {
+    font-size: 2rem; /* Adjust font size for mobile */
+  }
+}

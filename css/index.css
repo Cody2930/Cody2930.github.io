@@ -1,0 +1,177 @@
+/*
+  css/index.css
+  Page-Specific Stylesheet for the Homepage (index.html)
+
+  This file contains styles that are unique to the homepage. This includes
+  the hero section, introduction, and gallery preview. Keeping these styles
+  separate from the global styles.css makes the code more organized and
+  easier to maintain.
+*/
+
+/* --- Hero Section --- */
+/*
+  The hero section is the large, attention-grabbing area at the top of the page.
+  We use 'position: relative' so we can absolutely position text over the image.
+  'text-align: center' centers the h1 inside.
+*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* 70% of the viewport height */
+  overflow: hidden; /* Hides any part of the image that overflows the container */
+  text-align: center;
+  color: white; /* Text color for the hero text */
+}
+
+/*
+  The main hero image.
+  'width: 100%' and 'height: 100%' make the image fill the .hero container.
+  'object-fit: cover' ensures the image covers the entire area without being
+  distorted, cropping as necessary.
+*/
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* A subtle animation for the scroll effect */
+  transition: transform 0.8s ease-out;
+}
+
+/*
+  A subtle parallax/zoom effect on the hero image when the user scrolls.
+  This is a placeholder for a more complex scrolling animation that could
+  be implemented with JavaScript. For now, we'll keep it simple.
+*/
+body:not(.scrolled) .hero-image {
+  transform: scale(1.05);
+}
+
+/*
+  The text overlay on the hero image.
+  'position: absolute' takes it out of the normal flow.
+  'top: 50%' and 'left: 50%' move the top-left corner to the center.
+  'transform: translate(-50%, -50%)' shifts the element back by half its
+  own width and height, perfectly centering it.
+*/
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0; /* Remove default margin from h1 */
+}
+
+/* --- Introduction Section --- */
+/*
+  This section provides a brief introduction to the artist.
+  We give it significant padding for spacing and set a max-width to keep
+  the text from becoming too wide on large screens, which improves readability.
+  'margin: auto' centers the container.
+*/
+.intro-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.intro-section h2 {
+  font-size: 2.5rem;
+  color: var(--secondary-accent); /* Use the secondary accent color */
+}
+
+/* --- Gallery Preview Section --- */
+/*
+  This section showcases a few pieces of artwork.
+  Like the intro, we use padding for spacing and center the content.
+*/
+.gallery-preview {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--primary-accent); /* Use the primary accent for a background */
+}
+
+.gallery-preview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/*
+  The grid container for the preview images.
+  We use CSS Grid to create a flexible, responsive grid.
+  'grid-template-columns' creates three equal-width columns. The 'repeat'
+  function is a shorthand for this.
+  'gap' creates space between the grid items.
+*/
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto; /* Center the grid and add bottom margin */
+}
+
+/*
+  Styles for each individual item in the grid.
+*/
+.preview-item img {
+  width: 100%; /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Removes bottom space under the image */
+  border: 3px solid var(--secondary-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/*
+  A subtle zoom and shadow effect when hovering over a preview image.
+*/
+.preview-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*
+  The "View Full Gallery" link at the bottom of the section.
+  We style it to look like a button for better user experience.
+*/
+.gallery-link a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--secondary-accent);
+  color: white;
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-link a:hover {
+  background-color: #5a9375; /* A slightly darker shade for hover */
+  color: white; /* Ensure text color stays white */
+}
+
+/* --- Responsive Styles for Homepage --- */
+@media (max-width: 768px) {
+  /*
+    On screens 768px or smaller, we adjust the layout for mobile.
+  */
+
+  .hero-text h1 {
+    font-size: 2rem; /* Reduce font size for smaller screens */
+  }
+
+  /*
+    Stack the gallery preview images in a single column instead of a grid.
+  */
+  .preview-grid {
+    grid-template-columns: 1fr; /* 1 column */
+    gap: 2rem; /* Increase gap for vertical stacking */
+  }
+}

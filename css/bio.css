@@ -1,0 +1,141 @@
+/*
+  css/bio.css
+  Page-Specific Stylesheet for the Bio Page (bio.html)
+
+  This file contains styles unique to the biography page, primarily
+  for creating the two-column layout (photo and text) and styling
+  the text content.
+*/
+
+/* --- Bio Page Container --- */
+/*
+  This is the main container for all content on the bio page.
+  'max-width' prevents the content from becoming too wide on large screens.
+  'margin: 0 auto' centers the container horizontally.
+  'padding' provides space around the content.
+*/
+.bio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/*
+  The main title for the bio page.
+  'text-align: center' centers the title.
+  'margin-bottom' creates space below the title.
+  'font-size' makes the title larger and more prominent.
+*/
+.bio-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  color: var(--secondary-accent);
+}
+
+/* --- Two-Column Layout --- */
+/*
+  This is the container for the two main columns (photo and text).
+  'display: flex' creates the flex container.
+  'align-items: flex-start' aligns items to the top of the container.
+  'gap' creates space between the two columns.
+*/
+.bio-content {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 3rem; /* Space between photo and text */
+}
+
+/* --- Left Column: Photo --- */
+/*
+  The container for the artist's photo.
+  'flex: 1' allows the column to grow and shrink.
+  'min-width: 300px' prevents the column from becoming too narrow.
+*/
+.bio-photo {
+  flex: 1;
+  min-width: 300px; /* Prevents the photo from being too squished */
+}
+
+/*
+  The image itself.
+  'width: 100%' makes the image responsive to the width of its container.
+  'height: auto' maintains the image's aspect ratio.
+  'border-radius' gives the image slightly rounded corners.
+  'border' adds a decorative border using a site accent color.
+*/
+.bio-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid var(--secondary-accent);
+}
+
+/* --- Right Column: Text --- */
+/*
+  The container for the text content (statement and biography).
+  'flex: 2' makes this column twice as wide as the photo column.
+*/
+.bio-text {
+  flex: 2;
+}
+
+/*
+  Styles for the headings within the text column.
+  'font-size' and 'margin-bottom' are adjusted for this specific page.
+*/
+.bio-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem; /* Add some space under the heading text */
+  border-bottom: 2px solid var(--primary-accent); /* Decorative underline */
+}
+
+/*
+  Adds space between the artist statement and the biography articles.
+*/
+.artist-statement {
+  margin-bottom: 2.5rem;
+}
+
+/*
+  Paragraph styles within the bio text for better readability.
+  'line-height' increases the space between lines of text.
+  'font-size' makes the text slightly larger than the default.
+*/
+.bio-text p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* --- Responsive Styles for Bio Page --- */
+@media (max-width: 768px) {
+  /*
+    On screens 768px or smaller, the two-column layout is not ideal.
+    We switch to a single-column layout.
+  */
+
+  /*
+    'flex-direction: column' stacks the flex items vertically.
+  */
+  .bio-content {
+    flex-direction: column;
+  }
+
+  /*
+    Adjust the title font size for smaller screens.
+  */
+  .bio-title {
+    font-size: 2.2rem;
+  }
+
+  /*
+    Center the photo and add some bottom margin to separate it from the text.
+    'max-width' prevents the photo from being overly large on mobile.
+    'margin: 0 auto 2rem auto' centers the block-level element.
+  */
+  .bio-photo {
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+  }
+}

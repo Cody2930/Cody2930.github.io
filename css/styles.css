@@ -1,0 +1,280 @@
+/*
+  css/styles.css
+  Global Stylesheet for Macha Makings
+
+  This file contains the foundational styles that apply across the entire
+  website. It defines the color palette, typography, and default styles
+  for common elements like the body, links, navigation, and footer.
+  By centralizing these styles, we ensure a consistent look and feel
+  on every page.
+*/
+
+/* --- Google Font Imports --- */
+/*
+  We are importing the 'Inconsolata' and 'Newsreader' fonts from Google Fonts.
+  'Inconsolata' is a monospace font chosen for headings to give a clean, elegant feel.
+  'Newsreader' is a serif font chosen for body text for its high readability.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Newsreader:opsz,wght@6..72,400;700&display=swap');
+
+/* --- CSS Variables --- */
+/*
+  Using CSS variables (custom properties) allows us to define our color
+  palette and other reusable values in one place. This makes it incredibly
+  easy to update the site's theme later on. If the client wants a new
+  background color, we only have to change it here.
+*/
+:root {
+  --background-color: #93E9BE; /* Main site background */
+  --text-color: #000000;       /* Standard text color */
+  --primary-accent: #82CFA8;   /* Primary accent for hover effects, etc. */
+  --secondary-accent: #6AA889; /* Secondary accent for other elements */
+  --heading-font: 'Inconsolata', monospace; /* Font for all h1, h2, etc. */
+  --body-font: 'Newsreader', serif;      /* Font for paragraphs and other text */
+}
+
+/* --- Global Reset and Body Styles --- */
+/*
+  This is a simple reset to remove default browser margins and padding,
+  and to set box-sizing to 'border-box'. 'border-box' makes layout math
+  more intuitive, as padding and borders are included in the element's
+  width and height.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Base styles for the <body> element. We apply the background color,
+  default text color, and body font defined in our variables. We also
+  set a minimum height of 100vh and use flexbox to ensure the footer
+  sticks to the bottom of the page, even on short content pages.
+*/
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  line-height: 1.6; /* Improves readability */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*
+  The <main> element will grow to fill any available space between the
+  header and footer, which is key to the sticky footer effect.
+*/
+main {
+  flex-grow: 1;
+}
+
+/* --- Typography --- */
+/*
+  Styles for all heading levels. We apply the 'Inconsolata' font and
+  set a bottom margin to create space between headings and the text
+  that follows.
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  margin-bottom: 1rem; /* 1rem = 16px by default */
+}
+
+/* Styles for paragraphs */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Styles for anchor (link) tags */
+a {
+  color: var(--text-color); /* Links will have the same color as text */
+  text-decoration: none; /* Remove the default underline */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/*
+  The :hover pseudo-class defines the style when a user mouses over a link.
+  We change the color to the primary accent color for a subtle effect.
+*/
+a:hover {
+  color: var(--primary-accent);
+}
+
+/* --- Header and Navigation --- */
+/*
+  The <header> element contains the site's main navigation.
+  We give it a subtle bottom border using the secondary accent color.
+*/
+header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--secondary-accent);
+}
+
+/*
+  The <nav> element is the container for our navigation links.
+  We use flexbox to position the site title/logo on the left and the
+  navigation links on the right.
+*/
+nav {
+  display: flex;
+  justify-content: space-between; /* Pushes items to opposite ends */
+  align-items: center; /* Vertically centers items */
+}
+
+/* Site title style */
+.site-title a {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/*
+  The main navigation links container.
+  We use flexbox again to lay out the links in a row.
+*/
+.nav-links {
+  list-style: none; /* Removes default bullet points */
+  display: flex;
+  gap: 2rem; /* Creates space between the links */
+}
+
+/* Individual navigation link styles */
+.nav-links a {
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  padding: 0.5rem; /* Adds clickable area */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for desktop navigation links */
+.nav-links a:hover {
+  background-color: var(--primary-accent);
+  color: var(--text-color); /* Keep text color consistent */
+}
+
+/* --- Mobile Navigation --- */
+/*
+  The hamburger icon for mobile navigation. It is hidden by default
+  on larger screens.
+*/
+.hamburger {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+}
+
+/*
+  The bars of the hamburger icon.
+*/
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+/*
+  The mobile menu that appears when the hamburger is clicked.
+  It is hidden by default.
+*/
+.mobile-nav {
+  display: none; /* Hidden by default */
+  list-style: none;
+  background-color: var(--background-color);
+  position: absolute; /* Takes it out of the normal document flow */
+  top: 70px; /* Position it just below the header */
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--secondary-accent);
+}
+
+/* Individual mobile navigation links */
+.mobile-nav li {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.mobile-nav a {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  background-color: var(--primary-accent);
+}
+
+
+/* --- Footer --- */
+/*
+  The <footer> element contains social media links and copyright info.
+  We give it a top border and some padding.
+*/
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--secondary-accent);
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* Container for social media icons */
+.social-icons {
+  margin-bottom: 1rem;
+}
+
+/* Individual social media icon links */
+.social-icons a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem; /* Makes icons larger and easier to click */
+}
+
+/* --- Media Queries for Responsiveness --- */
+/*
+  Media queries allow us to apply different styles for different screen sizes.
+  This is the core of responsive design.
+*/
+@media (max-width: 768px) {
+  /*
+    When the screen width is 768px or less (typical for tablets and phones),
+    these styles will apply.
+  */
+
+  /* Hide the desktop navigation links */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show the hamburger icon */
+  .hamburger {
+    display: block;
+  }
+
+  /*
+    When the 'active' class is added to the hamburger via JavaScript,
+    the bars will transform into an 'X'.
+  */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* Middle bar fades out */
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Top bar rotates */
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Bottom bar rotates */
+  }
+
+  /*
+    When the 'active' class is added to the mobile nav via JavaScript,
+    it will be displayed as a block-level element (stacked vertically).
+  */
+  .mobile-nav.active {
+    display: block;
+  }
+}
