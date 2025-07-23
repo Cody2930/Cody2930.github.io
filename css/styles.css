@@ -28,7 +28,7 @@
   --background-color: #93E9BE; /* Main site background */
   --text-color: #000000;       /* Standard text color */
   --primary-accent: #82CFA8;   /* Primary accent for hover effects, etc. */
-  --secondary-accent: #288063; /* Secondary accent for other elements */
+  --secondary-accent: #6AA889; /* Secondary accent for other elements */
   --heading-font: 'Inconsolata', monospace; /* Font for all h1, h2, etc. */
   --body-font: 'Newsreader', serif;      /* Font for paragraphs and other text */
 }
@@ -53,7 +53,7 @@
   sticks to the bottom of the page, even on short content pages.
 */
 body {
-  background-color: var(--background-color);
+  background: linear-gradient(to bottom, #9cffde 0%,#38b38a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color: var(--text-color);
   font-family: var(--body-font);
   line-height: 1.6; /* Improves readability */
@@ -185,7 +185,7 @@ nav {
 .mobile-nav {
   display: none; /* Hidden by default */
   list-style: none;
-  background-color: var(--background-color);
+  background-color: #9cffde;
   position: absolute; /* Takes it out of the normal document flow */
   top: 70px; /* Position it just below the header */
   left: 0;
@@ -219,6 +219,7 @@ nav {
   We give it a top border and some padding.
 */
 footer {
+  background-color: #38b38a;
   text-align: center;
   padding: 2rem;
   border-top: 1px solid var(--secondary-accent);
