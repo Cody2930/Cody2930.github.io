@@ -21,6 +21,7 @@
   overflow: hidden; /* Hides any part of the image that overflows the container */
   text-align: center;
   color: white; /* Text color for the hero text */
+  z-index: 0; /* Establish a stacking context */
 }
 
 /*
