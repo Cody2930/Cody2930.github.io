@@ -28,7 +28,7 @@
   --background-color: #93E9BE; /* Main site background */
   --text-color: #000000;       /* Standard text color */
   --primary-accent: #82CFA8;   /* Primary accent for hover effects, etc. */
-  --secondary-accent: #6AA889; /* Secondary accent for other elements */
+  --secondary-accent: #288063; /* Secondary accent for other elements */
   --heading-font: 'Inconsolata', monospace; /* Font for all h1, h2, etc. */
   --body-font: 'Newsreader', serif;      /* Font for paragraphs and other text */
 }
