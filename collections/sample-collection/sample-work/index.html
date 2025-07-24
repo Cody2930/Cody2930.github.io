@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- The 'viewport' meta tag controls the layout on mobile browsers -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
@@ -18,48 +17,37 @@
     <meta property="og:url" content="https://machamakings.me/collections/sample-collection/sample-work/index.html">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Macha Makings | Home">
-    <meta name="twitter:description" content="Welcome to Macha Makings. This site is to showcase my work and let the viewers know more about me.">
-    <meta name="twitter:image" content="images/Macha_Proj3_Stabilio.jpg">
+    <meta name="twitter:title" content="Macha Makings | Sample Artwork">
+    <meta name="twitter:description" content="Detailed view of 'Sample Artwork'.">
+    <meta name="twitter:image" content="../../../images/Macha_Proj3_Stabilio.jpg">
 
     <!-- Favicon Links -->
-    <!-- These links add the site's icon to the browser tab and bookmarks -->
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../icons/favicon-16x16.png">
+    <link rel="manifest" href="../../icons/site.webmanifest">
 
     <!-- Stylesheet Links -->
-    <!-- It's crucial to link the global stylesheet first, then the page-specific one -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/sample_work.css">
 
     <!-- JavaScript Link -->
-    <!-- The 'defer' attribute tells the browser to load the script after parsing the HTML -->
-    <script src="scripts/main.js" defer></script>
+    <script src="../../../scripts/main.js" defer></script>
 </head>
 <body>
 
-    <!-- The <header> contains the primary navigation for the site -->
     <header>
-        <!-- The <nav> element represents the navigation section -->
         <nav>
-            <!-- The site title, linking back to the homepage -->
             <div class="site-title">
-                <a href="index.html">Macha Makings</a>
+                <a href="../../../index.html">Macha Makings</a>
             </div>
-
-            <!-- Desktop Navigation Links -->
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="cv.html">CV/Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="collections/index.html">Gallery</a></li>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../../bio.html">Bio</a></li>
+                <li><a href="../../../cv.html">CV/Resume</a></li>
+                <li><a href="../../../contact.html">Contact</a></li>
+                <li><a href="../../index.html">Gallery</a></li>
             </ul>
-
-            <!-- Mobile Navigation Hamburger Icon -->
-            <!-- This button is only visible on mobile screens -->
             <button class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -67,59 +55,60 @@
             </button>
         </nav>
         <ul class="mobile-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="bio.html">Bio</a></li>
-            <li><a href="cv.html">CV/Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="collections/index.html">Gallery</a></li>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../bio.html">Bio</a></li>
+            <li><a href="../../../cv.html">CV/Resume</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+            <li><a href="../../index.html">Gallery</a></li>
         </ul>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <!-- This section contains the main hero image for the homepage -->
-        <section class="hero">
-            <!-- The 'lazy' class enables lazy loading for this image -->
-            <!-- The 'data-src' holds the actual image, 'src' holds a low-res placeholder -->
-            <img src="https://placehold.co/1200x600/82CFA8/000000?text=Macha+Makings"
-                 data-src="images/Macha_Proj3_Stabilio.jpg"
-                 alt="A realistic drawing of a red Stabilo pen."
-                 class="hero-image lazy">
-            <div class="hero-text">
-                <h1>Welcome to Macha Makings</h1>
-            </div>
-        </section>
+        <!-- Main container for an individual artwork page -->
+        <article class="artwork-container">
 
-        <!-- Introduction Section -->
-        <section class="intro-section">
-            <h2>Kevin Macha, Artist</h2>
-            <p>
-                This site is to showcase my work and let viewers know more about me.
-                I am an artist-in-training at Texas A&M University Corpus Christi, working
-                in both digital and traditional mediums. Explore my gallery to see my latest creations.
-            </p>
-        </section>
-
-        <!-- Gallery Preview Section -->
-        <section class="gallery-preview">
-            <h2>Gallery Preview</h2>
-            <div class="gallery-link">
-                <a href="collections/index.html">View Full Gallery</a>
+            <!-- Link to go back to the parent collection -->
+            <div class="breadcrumb">
+                <a href="../index.html" class="back-to-series-btn">← Back to Collection</a>
             </div>
-        </section>
+
+            <!-- Two-column layout for the artwork and its details -->
+            <div class="artwork-layout">
+
+                <!-- Left column: Main image -->
+                <div class="artwork-image-container">
+                    <img src="https://placehold.co/800x800/82CFA8/000000?text=Artwork"
+                         data-src="../../../images/Macha_Proj3_01.png"
+                         alt="Full view of Modern Fossil"
+                         class="lazy main-artwork-image">
+                </div>
+
+                <!-- Right column: Artwork details -->
+                <div class="artwork-details-container">
+                    <h1 class="artwork-title">Modern Fossil</h1>
+
+                    <ul class="artwork-meta">
+                        <li><strong>Medium:</strong> Ink and Spraypaint on paper</li>
+                        <li><strong>Dimensions:</strong> 17" x 24"</li>
+                        <li><strong>Year:</strong> 2025</li>
+                    </ul>
+
+                    <div class="artwork-description">
+                        <p>
+                            This is one variation of the set that was produced. This version has makes it look like the stone is buried underneath the sand.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </article>
     </main>
 
-    <!-- The <footer> contains site-wide information like social links and copyright -->
     <footer>
         <div class="social-icons">
-            <!-- Links to social media profiles -->
-            <!-- Using placeholder links for now -->
-            <a href="https://www.instagram.com/macha_makings/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <!-- In a real project, these would be SVG icons -->
-                IG
-            </a>
+            <a href="https://www.instagram.com/macha_makings/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
         </div>
-        <!-- Copyright information -->
         <p>&copy; 2024 Kevin Macha. All Rights Reserved.</p>
     </footer>
 
