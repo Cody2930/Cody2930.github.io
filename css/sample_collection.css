@@ -57,28 +57,35 @@
 
 
 /* --- Artwork Grid --- */
-/*
-  The grid that holds all the artwork cards for this series.
-  'display: grid' initializes the grid layout.
-  'grid-template-columns' creates a responsive grid. It will try to fit as many
-  280px columns as it can, and then distribute the remaining space evenly.
-  'gap' creates space between the grid items.
-*/
 .artwork-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the items horizontally */
   gap: 2rem;
 }
 
 /* --- Artwork Card --- */
-/*
-  The style for each individual artwork link/card.
-  'text-align: center' centers the artwork name below the image.
-  'transition' allows for smooth hover effects.
-*/
 .artwork-card {
+  flex: 0 0 30%; /* Set a fixed basis of 30% */
+  max-width: 30%; /* Ensure it doesn't grow larger */
   text-align: center;
   transition: transform 0.3s ease;
+}
+
+/* Media query for tablet-sized screens */
+@media (max-width: 768px) {
+  .artwork-card {
+    flex: 0 0 45%; /* Two cards per row */
+    max-width: 45%;
+  }
+}
+
+/* Media query for mobile-sized screens */
+@media (max-width: 480px) {
+  .artwork-card {
+    flex: 0 0 90%; /* One card per row */
+    max-width: 90%;
+  }
 }
 
 .artwork-card a {
