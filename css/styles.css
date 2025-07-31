@@ -283,77 +283,28 @@ footer {
 
 /* --- Sitemap Styles --- */
 .sitemap-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     padding: 2rem;
+    max-width: 900px;
+    margin: auto;
 }
 
-.sitemap-buttons {
+.sitemap-section {
+    margin-bottom: 2rem;
+}
+
+.sitemap-section h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--secondary-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sitemap-section ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding-left: 0;
 }
 
-.sitemap-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    margin: 1rem;
-    background-color: var(--primary-accent);
-    color: var(--text-color);
-    font-family: var(--heading-font);
-    font-size: 1.5rem;
-    text-decoration: none;
-    border: 2px solid var(--secondary-accent);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    width: 250px; /* Set a fixed width */
-    box-sizing: border-box; /* Include padding and border in the width */
-}
-
-.sitemap-button:hover {
-    background-color: var(--secondary-accent);
-    color: #fff;
-}
-
-#save-contact {
-    background-color: var(--secondary-accent);
-    color: #fff;
-}
-
-#save-contact:hover {
-    background-color: var(--primary-accent);
-    color: var(--text-color);
-}
-
-.copy-link-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-#sitemap-link {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid var(--secondary-accent);
-    border-radius: 5px 0 0 5px;
-    width: 300px;
-}
-
-#copy-link-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: var(--secondary-accent);
-    color: #fff;
-    border: 1px solid var(--secondary-accent);
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#copy-link-button:hover {
-    background-color: var(--primary-accent);
+.sitemap-section ul li {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
 }
