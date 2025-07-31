@@ -348,7 +348,7 @@ footer {
 .card .button {
     display: block;
     background-color: #e7f3ff;
-    color: #1877f2;
+    color: #288063;
     padding: 12px;
     border-radius: 6px;
     text-decoration: none;
@@ -383,7 +383,7 @@ footer {
 }
 
 .share-link-container button {
-    background-color: #42b72a;
+    background-color: #288063;
     color: white;
     border: none;
     border-radius: 6px;
