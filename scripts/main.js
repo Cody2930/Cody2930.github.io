@@ -39,5 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileNav.classList.toggle('active');
     });
   }
+
+    // --- Sitemap Page ---
+    const saveContactButton = document.getElementById('save-contact');
+    if (saveContactButton) {
+        saveContactButton.addEventListener('click', () => {
+            alert('Contact information saved! (Placeholder)');
+        });
+    }
+
+    const copyLinkButton = document.getElementById('copy-link-button');
+    const sitemapLink = document.getElementById('sitemap-link');
+    if (copyLinkButton && sitemapLink) {
+        copyLinkButton.addEventListener('click', () => {
+            sitemapLink.select();
+            sitemapLink.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand('copy');
+            alert('Link copied to clipboard!');
+        });
+    }
 });
 
