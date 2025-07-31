@@ -60,3 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function copyLink() {
+    const linkInput = document.getElementById('shareLink');
+    const textToCopy = linkInput.value;
+    const copyButton = document.querySelector('.share-link-container button');
+
+    // Use the modern Clipboard API
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        // Provide user feedback
+        const originalButtonText = copyButton.textContent;
+        copyButton.textContent = 'Copied!';
+
+        // Change the text back after a short delay
+        setTimeout(() => {
+            copyButton.textContent = originalButtonText;
+        }, 2000); // 2 seconds
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        // Fallback for older browsers (less common now)
+        try {
+            linkInput.select();
+            document.execCommand('copy');
+            const originalButtonText = copyButton.textContent;
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+                copyButton.textContent = originalButtonText;
+            }, 2000);
+        } catch (e) {
+            console.error('Fallback copy method failed: ', e);
+            alert('Failed to copy link.');
+        }
+    });
+}
