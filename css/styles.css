@@ -383,7 +383,7 @@ footer {
 }
 
 .share-link-container button {
-    background-color: #288063;
+    background-color: #38b38a;
     color: white;
     border: none;
     border-radius: 6px;
@@ -394,7 +394,7 @@ footer {
 }
 
 .share-link-container button:hover {
-    background-color: #36a420;
+    background-color: #288063;
 }
 
 /* vCard Mobile Responsiveness */
