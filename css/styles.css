@@ -280,3 +280,53 @@ footer {
     display: block;
   }
 }
+
+/* --- Sitemap Styles --- */
+.sitemap-container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.sitemap-section {
+    margin-bottom: 2rem;
+}
+
+.sitemap-section h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--secondary-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sitemap-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sitemap-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.sitemap-section ul a {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.sitemap-section ul a:hover {
+    text-decoration: underline;
+}
+
+.collection-list > li > a {
+    font-weight: bold;
+}
+
+.collection-list ul {
+    padding-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+.collection-list ul a {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
