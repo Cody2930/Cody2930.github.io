@@ -36,8 +36,16 @@
 
 .gallery-intro {
   font-size: 1.2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-statement {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
