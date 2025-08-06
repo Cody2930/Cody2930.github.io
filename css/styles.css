@@ -129,6 +129,11 @@ nav {
   font-weight: 700;
 }
 
+.site-logo {
+  height: 50px;
+  vertical-align: middle;
+}
+
 /*
   The main navigation links container.
   We use flexbox again to lay out the links in a row.
