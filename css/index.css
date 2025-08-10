@@ -115,7 +115,7 @@ body:not(.scrolled) .hero-image {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 400px;
   margin: 0 auto 2rem auto; /* Center the grid and add bottom margin */
 }
 
@@ -123,8 +123,8 @@ body:not(.scrolled) .hero-image {
   Styles for each individual item in the grid.
 */
 .preview-item img {
-  width: 100%; /* Make the image fill its container */
-  height: auto; /* Maintain aspect ratio */
+  width: 10%; /* Make the image fill its container */
+  height: 200px; /* Maintain aspect ratio */
   display: block; /* Removes bottom space under the image */
   border: 3px solid var(--secondary-accent);
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
