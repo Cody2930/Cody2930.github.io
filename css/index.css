@@ -115,7 +115,7 @@ body:not(.scrolled) .hero-image {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 400px;
+  max-width: 1200px;
   margin: 0 auto 2rem auto; /* Center the grid and add bottom margin */
 }
 
@@ -123,8 +123,8 @@ body:not(.scrolled) .hero-image {
   Styles for each individual item in the grid.
 */
 .preview-item img {
-  width: 10%; /* Make the image fill its container */
-  height: 200px; /* Maintain aspect ratio */
+  width: 100%; /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
   display: block; /* Removes bottom space under the image */
   border: 3px solid var(--secondary-accent);
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
@@ -189,40 +189,53 @@ body:not(.scrolled) .hero-image {
   margin-bottom: 2rem;
 }
 
-.artwork-display {
-  max-width: 800px;
-  margin: auto;
-  border: 4px solid var(--secondary-accent);
+.featured-artwork .collection-card {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* --- Collection Card --- */
+.collection-card {
+  background-color: #fff;
   border-radius: 8px;
-  overflow: hidden; /* Ensures the image respects the border radius */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: var(--primary-accent);
+  display: block; /* Make the whole card a block-level element */
 }
 
-.artwork-display:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.collection-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
-.artwork-display img {
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.collection-thumbnail {
   width: 100%;
-  height: auto;
+  height: 450px; /* A bit taller for the featured item */
+  object-fit: cover;
   display: block;
 }
 
-.artwork-caption {
+.collection-info {
   padding: 1.5rem;
+  text-align: center;
+}
+
+.collection-info .collection-title {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
   color: var(--text-color);
 }
 
-.artwork-caption h3 {
-  font-family: var(--heading-font);
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.artwork-caption p {
-  font-family: var(--body-font);
-  font-size: 1.1rem;
-  margin-bottom: 0;
+.collection-info .collection-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
 }
